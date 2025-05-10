@@ -1134,7 +1134,7 @@ You can customize the reticle in the settings, as it was done on the vanilla cli
 
 <table align="center">
   <tr>
-    <td colspan="15" align="center"><strong>Set 1</strong></td>
+    <td colspan="15" align="center"><strong>Набор 1</strong></td>
   </tr>
   <tr>
     <td align="center"><img src="./assets/images/Controls/1.png" width="32"/></td>
@@ -1156,7 +1156,7 @@ You can customize the reticle in the settings, as it was done on the vanilla cli
 
 <table align="center">
   <tr>
-    <td colspan="15" align="center"><strong>Set 2</strong></td>
+    <td colspan="15" align="center"><strong>Набор 2</strong></td>
   </tr>
   <tr>
     <td align="center"><img src="./assets/images/Controls/7.png" width="32"/></td>
@@ -1178,7 +1178,7 @@ You can customize the reticle in the settings, as it was done on the vanilla cli
 
 <table align="center">
   <tr>
-    <td colspan="15" align="center"><strong>Set 3</strong></td>
+    <td colspan="15" align="center"><strong>Набор 3</strong></td>
   </tr>
   <tr>
     <td align="center"><img src="./assets/images/Controls/13.png" width="32"/></td>
@@ -1198,7 +1198,7 @@ You can customize the reticle in the settings, as it was done on the vanilla cli
 
 <table align="center">
   <tr>
-    <td colspan="15" align="center"><strong>Set 4</strong></td>
+    <td colspan="15" align="center"><strong>Набор 4</strong></td>
   </tr>
   <tr>
     <td align="center"><img src="./assets/images/Controls/18.png" width="32"/></td>
@@ -1218,7 +1218,7 @@ You can customize the reticle in the settings, as it was done on the vanilla cli
 
 <table align="center">
   <tr>
-    <td colspan="15" align="center"><strong>Set 5</strong></td>
+    <td colspan="15" align="center"><strong>Набор 5</strong></td>
   </tr>
   <tr>
     <td align="center"><img src="./assets/images/Controls/23.png" width="32"/></td>
@@ -1238,7 +1238,7 @@ You can customize the reticle in the settings, as it was done on the vanilla cli
 
 <table align="center">
   <tr>
-    <td colspan="15" align="center"><strong>Set 6</strong></td>
+    <td colspan="15" align="center"><strong>Набор 6</strong></td>
   </tr>
   <tr>
     <td align="center"><img src="./assets/images/Controls/1.png" width="32"/></td>
