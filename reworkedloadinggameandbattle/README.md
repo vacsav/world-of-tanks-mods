@@ -15,11 +15,11 @@ Recommendations:
 - Set in settings - display text when entering battle
 
 <figure style="text-align: center;">
-  <img src="./assets/images/aqua.png" alt="Preview"/>
+  <img src="./assets/images/1ofgame.png" alt="Preview"/>
   <figcaption>Game launch: 1 of 65</figcaption>
 </figure>
 <figure style="text-align: center;">
-  <img src="./assets/images/aqua.png" alt="Preview"/>
+  <img src="./assets/images/1ofmaps.png" alt="Preview"/>
   <figcaption>Entering battle: 1 of the maps in a random battle</figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ Recommendations:
 - Установить в настройках - отображать текст при входе в бой
 
 <figure style="text-align: center;">
-  <img src="./assets/images/1ofgame.png alt="Preview"/>
+  <img src="./assets/images/1ofgame.png" alt="Preview"/>
   <figcaption>Запуск игры: 1 из 65</figcaption>
 </figure>
 <figure style="text-align: center;">
