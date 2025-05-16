@@ -15,12 +15,13 @@ Recommendations:
 - Set in settings - display text when entering battle
 
 <figure style="text-align: center;">
-  <img src="./assets/images/1ofgame.png" alt="Preview"/>
   <figcaption>Game launch: 1 of 65</figcaption>
+  <img src="./assets/images/1ofgame.png" alt="Preview"/>
 </figure>
+
 <figure style="text-align: center;">
-  <img src="./assets/images/1ofmaps.png" alt="Preview"/>
   <figcaption>Entering battle: 1 of the maps in a random battle</figcaption>
+  <img src="./assets/images/1ofmaps.png" alt="Preview"/>
 </figure>
 
 ## RU
@@ -34,10 +35,11 @@ Recommendations:
 - Установить в настройках - отображать текст при входе в бой
 
 <figure style="text-align: center;">
-  <img src="./assets/images/1ofgame.png" alt="Preview"/>
   <figcaption>Запуск игры: 1 из 65</figcaption>
+  <img src="./assets/images/1ofgame.png" alt="Preview"/>
 </figure>
+
 <figure style="text-align: center;">
-  <img src="./assets/images/1ofmaps.png" alt="Preview"/>
   <figcaption>Вход в бой: 1 из карт в случайном бою</figcaption>
+  <img src="./assets/images/1ofmaps.png" alt="Preview"/>
 </figure>
