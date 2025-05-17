@@ -11,6 +11,10 @@
 
 Changed images when starting the game, entering the battle
 
+Additionally third-party mods are used:
+- [Scriptloader Pro](https://wgmods.net/323/) - Loading Game
+- [Anime-Style Mod Collection - Vinyl Edition](https://wgmods.net/5827/) - Game exit image
+
 Recommendations:
 - Set in settings - display text when entering battle
 
@@ -30,6 +34,10 @@ Recommendations:
 **Выбор миникарты доступ внутри архива Reworked Loading Game and Battle**
 
 Изменены изображения при запуске игры, входе в бой
+
+Дополнительно используются сторонние моды:
+- [Scriptloader Pro](https://wgmods.net/323/) - Запуск игры
+- [Anime-Style Mod Collection - Vinyl Edition](https://wgmods.net/5827/) - Изображение выхода из игры
 
 Рекомендации:
 - Установить в настройках - отображать текст при входе в бой
