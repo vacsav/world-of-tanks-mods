@@ -24,7 +24,7 @@ def overrideIn(cls, condition=lambda : True):
 
 
 @overrideIn(ArcadeCamera)
-def enable(func, self, preferredPos=None, closesDist=False, postmortemParams=None, turretYaw=None, gunPitch=None, camTransitionParams=None, initialVehicleMatrix=None, arcadeState=None):
+def enable(func, self, preferredPos = None, closesDist = False, postmortemParams = None, turretYaw = None, gunPitch = None, camTransitionParams = None, initialVehicleMatrix = None, arcadeState = None):
     replayCtrl = BattleReplay.g_replayCtrl
     if replayCtrl.isRecording:
         replayCtrl.setAimClipPosition(self._aimOffset)
@@ -39,8 +39,8 @@ def enable(func, self, preferredPos=None, closesDist=False, postmortemParams=Non
         vehicle = attachedVehicle
         isWaitingForVehicle = False
     isPlayerVehicleAttached = attachedVehicle.id == player.playerVehicleID if attachedVehicle else False
-    isObserverInBattle = player.observerSeesAll() and player.arena.period == constants.ARENA_PERIOD.BATTLE
-    if isObserverInBattle and isPlayerVehicleAttached or isWaitingForVehicle:
+    isObserverInBattle = player.observerSeesAll() and (player.arena.period == constants.ARENA_PERIOD.BATTLE)
+    if (isObserverInBattle and isPlayerVehicleAttached) or isWaitingForVehicle:
         self.delayCallback(0.0, self.enable, preferredPos, closesDist, postmortemParams, turretYaw, gunPitch, camTransitionParams, initialVehicleMatrix)
         return
     else:
@@ -54,7 +54,7 @@ def enable(func, self, preferredPos=None, closesDist=False, postmortemParams=Non
                 self._ArcadeCamera__zoomStateSwitcher.switchToState(arcadeState.zoomSwitcherState)
                 state = self._ArcadeCamera__zoomStateSwitcher.getCurrentState()
                 newCameraDistance = arcadeState.camDist
-            self._updateProperties(state=state)
+            self._updateProperties(state = state)
             self._updateCameraSettings(newCameraDistance)
             self._ArcadeCamera__inputInertia.glideFov(self._ArcadeCamera__calcRelativeDist())
             if arcadeState is None:
@@ -106,5 +106,4 @@ def enable(func, self, preferredPos=None, closesDist=False, postmortemParams=Non
         g_guiResetters.add(self._ArcadeCamera__onRecreateDevice)
         self._ArcadeCamera__updateAdvancedCollision()
         self._ArcadeCamera__updateLodBiasForTanks()
-        return
         return
