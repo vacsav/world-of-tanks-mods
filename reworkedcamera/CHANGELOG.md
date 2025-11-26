@@ -2,6 +2,8 @@
 
 ### 1.3.0
 
+- 2.1.0.0
+
 - Changed the range of distances
 - Changed the collision logic
 - Added client auto-detection
