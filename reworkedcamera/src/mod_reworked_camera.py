@@ -56,15 +56,18 @@ def enable(func, self, preferredPos=None, closesDist=False, postmortemParams=Non
     vehicleMProv = initialVehicleMatrix
     isPreCommanderCam = self._ArcadeCamera__compareCurrStateSettingsKey(GAME.PRE_COMMANDER_CAM)
     isCommanderCam = self._ArcadeCamera__compareCurrStateSettingsKey(GAME.COMMANDER_CAM)
-    if isPreCommanderCam or isCommanderCam or arcadeState is not None or (self._ArcadeCamera__isInArcadeZoomState() and arcadeState is None):
-        state = None
-        newCameraDistance = 25
-        if arcadeState is not None:
+    isArcadeCam = self._ArcadeCamera__isInArcadeZoomState()
+    if isPreCommanderCam or isCommanderCam or arcadeState is not None or isArcadeCam:
+        if isPreCommanderCam or isCommanderCam:
+            state = None
+            newCameraDistance = 25
+        elif arcadeState is not None:
             self._ArcadeCamera__zoomStateSwitcher.switchToState(arcadeState.zoomSwitcherState)
             state = self._ArcadeCamera__zoomStateSwitcher.getCurrentState()
             newCameraDistance = arcadeState.camDist
-        elif self._ArcadeCamera__isInArcadeZoomState() and arcadeState is None:
+        else:
             currentDist = self._ArcadeCamera__aimingSystem.distanceFromFocus
+            state = None
             newCameraDistance = min(currentDist, 25)
         self._ArcadeCamera__updateProperties(state=state)
         self._ArcadeCamera__updateCameraSettings(newCameraDistance)
@@ -137,15 +140,18 @@ def enable(func, self, preferredPos = None, closesDist = False, postmortemParams
         vehicleMProv = initialVehicleMatrix
         isPreCommanderCam = self._ArcadeCamera__compareCurrStateSettingsKey(GAME.PRE_COMMANDER_CAM)
         isCommanderCam = self._ArcadeCamera__compareCurrStateSettingsKey(GAME.COMMANDER_CAM)
-        if isPreCommanderCam or isCommanderCam or arcadeState is not None or (self.isInArcadeZoomState() and arcadeState is None):
-            state = None
-            newCameraDistance = 25
-            if arcadeState is not None:
+        isArcadeCam = self.isInArcadeZoomState()
+        if isPreCommanderCam or isCommanderCam or arcadeState is not None or isArcadeCam:
+            if isPreCommanderCam or isCommanderCam:
+                state = None
+                newCameraDistance = 25
+            elif arcadeState is not None:
                 self._ArcadeCamera__zoomStateSwitcher.switchToState(arcadeState.zoomSwitcherState)
                 state = self._ArcadeCamera__zoomStateSwitcher.getCurrentState()
                 newCameraDistance = arcadeState.camDist
-            elif self.isInArcadeZoomState() and arcadeState is None:
+            else:
                 currentDist = self._ArcadeCamera__aimingSystem.distanceFromFocus
+                state = None
                 newCameraDistance = min(currentDist, 25)
             self._updateProperties(state = state)
             self._updateCameraSettings(newCameraDistance)
