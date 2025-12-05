@@ -156,8 +156,8 @@ def enable(func, self, preferredPos = None, closesDist = False, postmortemParams
             self._updateProperties(state = state)
             self._updateCameraSettings(newCameraDistance)
             self._ArcadeCamera__inputInertia.glideFov(self._ArcadeCamera__calcRelativeDist())
-        if arcadeState is None:
-            self._ArcadeCamera__aimingSystem.aimMatrix = self._ArcadeCamera__calcAimMatrix()
+            if arcadeState is None:
+                self._ArcadeCamera__aimingSystem.aimMatrix = self._ArcadeCamera__calcAimMatrix()
         camDist = None
         if self._ArcadeCamera__postmortemMode:
             if postmortemParams is not None:
