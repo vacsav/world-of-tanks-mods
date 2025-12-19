@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 1.3.2
+
+- Code refactoring
+
 ### 1.3.1
 
 - 2.1.0.1
