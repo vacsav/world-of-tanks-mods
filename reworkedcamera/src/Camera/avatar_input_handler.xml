@@ -120,7 +120,7 @@
           <transitionEasingIn>	3	</transitionEasingIn>
           <transitionDurationOut>	1	</transitionDurationOut>
           <transitionEasingOut>	3	</transitionEasingOut>
-          <minLODBiasForTanks>	1.6	</minLODBiasForTanks>
+          <minLODBiasForTanks>	3.2	</minLODBiasForTanks>
           <settingsKey>	commanderCam	</settingsKey>
         </state>
       </additionalZoomStates>
@@ -423,11 +423,11 @@
           <heightAboveBaseOnMinMaxDist>	80 180	</heightAboveBaseOnMinMaxDist>
           <angleRangeOnMinDist>	38.55 90	</angleRangeOnMinDist>
           <angleRangeOnMaxDist>	9.65 85	</angleRangeOnMaxDist>
-          <transitionDurationIn>	1	</transitionDurationIn>
-          <transitionEasingIn>	3	</transitionEasingIn>
+          <transitionDurationIn>	0.01	</transitionDurationIn>
+          <transitionEasingIn>	2	</transitionEasingIn>
           <transitionDurationOut>	1	</transitionDurationOut>
           <transitionEasingOut>	3	</transitionEasingOut>
-          <minLODBiasForTanks>	1.6	</minLODBiasForTanks>
+          <minLODBiasForTanks>	3.2	</minLODBiasForTanks>
           <settingsKey>	commanderCam	</settingsKey>
         </state>
       </additionalZoomStates>

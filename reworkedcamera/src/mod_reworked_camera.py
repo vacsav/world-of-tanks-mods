@@ -321,6 +321,17 @@ def __updateAdvancedCollision(func, self):
     self._ArcadeCamera__aimingSystem.cursorShouldCheckCollisions(not isCommanderCam)
 
 
+@overrideIn(ArcadeCamera)
+def __updateLodBiasForTanks(func, self):
+    state = self._ArcadeCamera__zoomStateSwitcher.getCurrentState()
+    currentDist = self._ArcadeCamera__aimingSystem.distanceFromFocus
+    if state:
+        minLodBias = state.minLODBiasForTanks
+    else:
+        minLodBias = 1.6 if currentDist > 25.0 else 0.0
+    BigWorld.setMinLodBiasForTanks(minLodBias)
+
+
 @overrideIn(SniperCamera)
 def enable(func, self, targetPos, saveZoom):
     self._SniperCamera__prevTime = BigWorld.time()
