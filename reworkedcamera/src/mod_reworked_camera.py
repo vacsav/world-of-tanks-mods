@@ -359,7 +359,7 @@ def __getZooms(func, self):
     return zooms
     
 
-@overrideIn(CrosshairPanelContainer)
+@overrideIn(CrosshairPanelContainer, condition=isClientLesta)
 def setZoom(func, self, zoomFactor):
     if zoomFactor == self._CrosshairPanelContainer__zoomFactor:
         return
@@ -369,3 +369,15 @@ def setZoom(func, self, zoomFactor):
     else:
         zoomString = ''
     self.as_setZoomS(zoomString)
+
+
+@overrideIn(CrosshairPanelContainer, condition=isClientWG)
+def setZoom(func, self, zoomFactor):
+    if zoomFactor == self._CrosshairPanelContainer__zoomFactor:
+        return
+    self._CrosshairPanelContainer__zoomFactor = zoomFactor
+    if zoomFactor >= 1:
+        zoomString = i18n.makeString(INGAME_GUI.AIM_ZOOM, zoom=zoomFactor)
+    else:
+        zoomString = ''
+    self.as_setZoomS(zoomString, zoomFactor)
