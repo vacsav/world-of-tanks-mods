@@ -1,9 +1,19 @@
 # CHANGELOG
 
+### 1.5.1
+
+- 2.1.0.2
+- Fix for WG
+
 ### 1.5.0
 
 - 2.1.0.2
 - Added display of x1 value
+
+### 1.4.0
+
+- 2.1.0.2
+- Changed the minLODBiasForTanks
 
 ### 1.3.2
 
