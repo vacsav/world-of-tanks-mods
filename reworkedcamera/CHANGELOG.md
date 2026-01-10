@@ -1,5 +1,10 @@
 # CHANGELOG
 
+### 1.6.0
+
+- 2.1.0.2
+- Added the LOD logic for state=arcade, previously it was only for state=zoom
+
 ### 1.5.1
 
 - 2.1.0.2
