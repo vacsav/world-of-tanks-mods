@@ -12,12 +12,12 @@ from helpers import i18n
 _logger = logging.getLogger(__name__)
 
 
-def isClientWG():
-    return not isClientLesta()
-
-
 def isClientLesta():
     return CURRENT_REALM == 'RU'
+
+
+def isClientWG():
+    return not isClientLesta()
 
 
 def overrideIn(cls, condition=lambda: True):
@@ -39,6 +39,13 @@ def overrideIn(cls, condition=lambda: True):
         setattr(cls, funcName, wrapper)
         return wrapper
     return _overrideMethod
+
+
+orig_init = ArcadeCamera.__init__
+def mod_init(self, *args, **kwargs):
+    orig_init(self, *args, **kwargs)
+    self.__lastLodBias = None
+ArcadeCamera.__init__ = mod_init
 
 
 @overrideIn(ArcadeCamera, condition=isClientLesta)
@@ -150,6 +157,8 @@ def __update(func, self, dx, dy, dz, rotateMode = True, zoomMode = True):
                 self._ArcadeCamera__inputInertia.glideFov(self._ArcadeCamera__calcRelativeDist())
                 self._ArcadeCamera__aimingSystem.aimMatrix = self._ArcadeCamera__calcAimMatrix()
                 distChanged = True
+            if distChanged:
+                self._ArcadeCamera__updateLodBiasForTanks()
             if abs(newDist - prevDist) < floatEps and math_utils.almostZero(newDist - distMinMax.min):
                 if self._ArcadeCamera__isInArcadeZoomState() and self._ArcadeCamera__onChangeControlMode and not self._ArcadeCamera__updatedByKeyboard:
                     self._ArcadeCamera__onChangeControlMode()
@@ -296,6 +305,8 @@ def __update(func, self, dx, dy, dz, rotateMode = True, zoomMode = True):
                 self._ArcadeCamera__inputInertia.glideFov(self._ArcadeCamera__calcRelativeDist())
                 self._ArcadeCamera__aimingSystem.aimMatrix = self._ArcadeCamera__calcAimMatrix()
                 distChanged = True
+            if distChanged:
+                self._ArcadeCamera__updateLodBiasForTanks()
             if abs(newDist - prevDist) < floatEps and math_utils.almostZero(newDist - distMinMax.min):
                 if self.isInArcadeZoomState() and self._ArcadeCamera__onChangeControlMode and not self._ArcadeCamera__updatedByKeyboard:
                     self._ArcadeCamera__onChangeControlMode()
@@ -320,6 +331,26 @@ def __updateAdvancedCollision(func, self):
     isCommanderCam = self._ArcadeCamera__compareCurrStateSettingsKey(GAME.PRE_COMMANDER_CAM) or self._ArcadeCamera__compareCurrStateSettingsKey(GAME.COMMANDER_CAM)
     self._ArcadeCamera__cam.setCollisionCheckOnlyAtPos(isCommanderCam)
     self._ArcadeCamera__aimingSystem.cursorShouldCheckCollisions(not isCommanderCam)
+
+
+@overrideIn(ArcadeCamera)
+def __updateLodBiasForTanks(func, self):
+    aimingSystem = getattr(self, "_ArcadeCamera__aimingSystem", None)
+    currentDist = aimingSystem.distanceFromFocus if aimingSystem else 5.0
+    state = self._ArcadeCamera__zoomStateSwitcher.getCurrentState()
+    if isClientWG():
+        isArcadeCam = self.isInArcadeZoomState()
+    else:
+        isArcadeCam = self._ArcadeCamera__isInArcadeZoomState()
+    if state:
+        lod = state.minLODBiasForTanks
+    elif isArcadeCam and currentDist > 25.0:
+        lod = 1.6
+    else:
+        lod = 0.0
+    if getattr(self, "__lastLodBias", None) != lod:
+        BigWorld.setMinLodBiasForTanks(lod)
+        self.__lastLodBias = lod
 
 
 @overrideIn(SniperCamera)
