@@ -5,11 +5,11 @@ from AvatarInputHandler.DynamicCameras.ArcadeCamera import ArcadeCamera, ENABLE_
 from AvatarInputHandler.DynamicCameras.SniperCamera import SniperCamera
 from AvatarInputHandler.DynamicCameras.arcade_camera_helper import EScrollDir
 from account_helpers.settings_core.settings_constants import GAME
+from gui.Scaleform.daapi.view.battle.shared.crosshair.container import CrosshairPanelContainer
+from gui.Scaleform.locale.INGAME_GUI import INGAME_GUI
 from gui.battle_control import event_dispatcher
+from helpers import i18n
 _logger = logging.getLogger(__name__)
-
-def getClientType():
-    return CURRENT_REALM
 
 
 def isClientWG():
@@ -20,15 +20,17 @@ def isClientLesta():
     return CURRENT_REALM == 'RU'
 
 
-def overrideIn(cls, condition=(lambda : True)):
+def overrideIn(cls, condition=lambda: True):
 
     def _overrideMethod(func):
         if not condition():
             return func
+
         funcName = func.__name__
-        if funcName.startswith('__'):
-            prefix = '_' if not cls.__name__.startswith('_') else ''
-            funcName = prefix + cls.__name__ + funcName
+
+        if funcName.startswith("__") and funcName != "__init__":
+            funcName = "_" + cls.__name__ + funcName
+
         old = getattr(cls, funcName)
 
         def wrapper(*args, **kwargs):
@@ -36,7 +38,6 @@ def overrideIn(cls, condition=(lambda : True)):
 
         setattr(cls, funcName, wrapper)
         return wrapper
-
     return _overrideMethod
 
 
@@ -321,17 +322,6 @@ def __updateAdvancedCollision(func, self):
     self._ArcadeCamera__aimingSystem.cursorShouldCheckCollisions(not isCommanderCam)
 
 
-@overrideIn(ArcadeCamera)
-def __updateLodBiasForTanks(func, self):
-    state = self._ArcadeCamera__zoomStateSwitcher.getCurrentState()
-    currentDist = self._ArcadeCamera__aimingSystem.distanceFromFocus
-    if state:
-        minLodBias = state.minLODBiasForTanks
-    else:
-        minLodBias = 1.6 if currentDist > 25.0 else 0.0
-    BigWorld.setMinLodBiasForTanks(minLodBias)
-
-
 @overrideIn(SniperCamera)
 def enable(func, self, targetPos, saveZoom):
     self._SniperCamera__prevTime = BigWorld.time()
@@ -367,3 +357,15 @@ def __getZooms(func, self):
     if not self._cfg['increasedZoom']:
         zooms = zooms[:4]
     return zooms
+    
+
+@overrideIn(CrosshairPanelContainer)
+def setZoom(func, self, zoomFactor):
+    if zoomFactor == self._CrosshairPanelContainer__zoomFactor:
+        return
+    self._CrosshairPanelContainer__zoomFactor = zoomFactor
+    if zoomFactor >= 1:
+        zoomString = i18n.makeString(INGAME_GUI.AIM_ZOOM, zoom=zoomFactor)
+    else:
+        zoomString = ''
+    self.as_setZoomS(zoomString)
