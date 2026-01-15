@@ -6,8 +6,6 @@
 
 ## EN
 
-**Not compatible with [Reworked Exit CommanderCam](../reworkedexitcommandercam/) mod**
-
 Reworked the logic of camera work in battle
 
 <p align="center">
@@ -27,8 +25,6 @@ Reworked the logic of camera work in battle
 </p>
 
 ## RU
-
-**Не совместим с модом [Reworked Exit CommanderCam](../reworkedexitcommandercam/)**
 
 Переработана логика работы камеры в бою
 
