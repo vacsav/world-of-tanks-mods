@@ -1,5 +1,15 @@
 # CHANGELOG
 
+### 1.7.1
+
+- 2.1.1.0
+- Changed: distance and height, tactical view entry repeats vanilla
+
+### 1.7.0
+
+- 2.1.1.0
+- In this version, only commanerCam and zooms have been changed, the rest is 1 to 1 with the vanilla client
+
 ### 1.6.0
 
 - 2.1.1.0

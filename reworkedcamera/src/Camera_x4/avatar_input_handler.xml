@@ -34,7 +34,7 @@
     <ownShotImpulseDelay>	0.005	</ownShotImpulseDelay>
   </dynamicCameraCommon>
   <postMortemMode>
-    <defaultOffset>	0.0 0.15	</defaultOffset>
+    <defaultOffset> 0.0 0.15 </defaultOffset>
     <camera>
       <advancedCollider>
         <enable>	true	</enable>
@@ -82,43 +82,60 @@
       <sensitivity>	0.0025	</sensitivity>
       <scrollSensitivity>	5	</scrollSensitivity>
       <angleRange>	10 110	</angleRange>
-      <distRange>	5 45	</distRange>
+      <distRange>	2 25	</distRange>
       <fovMultMinDist>	1.0	</fovMultMinDist>
       <fovMultMaxDist>	1.0	</fovMultMaxDist>
       <focusRadius>	3	</focusRadius>
       <heightAboveBase>	4	</heightAboveBase>
-      <overScrollProtectOnMax>	0	</overScrollProtectOnMax>
+      <overScrollProtectOnMax>	0.2	</overScrollProtectOnMax>
       <additionalZoomStates>
         <state>
-          <distRange>	45 55	</distRange>
+          <distRange>	30 45	</distRange>
           <sensitivity>	0.0025	</sensitivity>
-          <scrollSensitivity>	10	</scrollSensitivity>
-          <focusRadiusOnMinMaxDist>	-15 -30	</focusRadiusOnMinMaxDist>
-          <heightAboveBaseOnMinMaxDist>	20 40	</heightAboveBaseOnMinMaxDist>
-          <angleRangeOnMinDist>	43.15 105	</angleRangeOnMinDist>
-          <angleRangeOnMaxDist>	40.15 105	</angleRangeOnMaxDist>
-          <overScrollProtectOnMax>	0.1	</overScrollProtectOnMax>
-          <overScrollProtectOnMin>	0.1	</overScrollProtectOnMin>
-          <transitionDurationIn>	1	</transitionDurationIn>
-          <transitionEasingIn>	3	</transitionEasingIn>
-          <transitionDurationOut>	1	</transitionDurationOut>
+          <scrollSensitivity>	5	</scrollSensitivity>
+          <focusRadiusOnMinMaxDist>	3 3	</focusRadiusOnMinMaxDist>
+          <heightAboveBaseOnMinMaxDist>	4 4	</heightAboveBaseOnMinMaxDist>
+          <angleRangeOnMinDist>	10 110	</angleRangeOnMinDist>
+          <angleRangeOnMaxDist>	10 110	</angleRangeOnMaxDist>
+          <overScrollProtectOnMax>	0.2	</overScrollProtectOnMax>
+          <overScrollProtectOnMin>	0.0	</overScrollProtectOnMin>
+          <transitionDurationIn>	0.3	</transitionDurationIn>
+          <transitionEasingIn>	2	</transitionEasingIn>
+          <transitionDurationOut>	0.25	</transitionDurationOut>
           <transitionEasingOut>	3	</transitionEasingOut>
           <minLODBiasForTanks>	1.6	</minLODBiasForTanks>
           <settingsKey>	preCommanderCam	</settingsKey>
         </state>
         <state>
-          <distRange>	60 93	</distRange>
+          <distRange>	20 40	</distRange>
           <sensitivity>	0.0025	</sensitivity>
-          <scrollSensitivity>	33	</scrollSensitivity>
-          <overScrollProtectOnMax>	0	</overScrollProtectOnMax>
-          <overScrollProtectOnMin>	0.1	</overScrollProtectOnMin>
-          <focusRadiusOnMinMaxDist>	-60 -27	</focusRadiusOnMinMaxDist>
-          <heightAboveBaseOnMinMaxDist>	80 180	</heightAboveBaseOnMinMaxDist>
-          <angleRangeOnMinDist>	38.55 90	</angleRangeOnMinDist>
-          <angleRangeOnMaxDist>	9.65 85	</angleRangeOnMaxDist>
-          <transitionDurationIn>	1	</transitionDurationIn>
+          <scrollSensitivity>	20	</scrollSensitivity>
+          <focusRadiusOnMinMaxDist>	-15 -30	</focusRadiusOnMinMaxDist>
+          <heightAboveBaseOnMinMaxDist>	20 40	</heightAboveBaseOnMinMaxDist>
+          <angleRangeOnMinDist>	40 85	</angleRangeOnMinDist>
+          <angleRangeOnMaxDist>	35 85	</angleRangeOnMaxDist>
+          <overScrollProtectOnMax>	0.2	</overScrollProtectOnMax>
+          <overScrollProtectOnMin>	0.2	</overScrollProtectOnMin>
+          <transitionDurationIn>	0.5	</transitionDurationIn>
           <transitionEasingIn>	3	</transitionEasingIn>
-          <transitionDurationOut>	1	</transitionDurationOut>
+          <transitionDurationOut>	0.5	</transitionDurationOut>
+          <transitionEasingOut>	2	</transitionEasingOut>
+          <minLODBiasForTanks>	1.6	</minLODBiasForTanks>
+          <settingsKey>	commanderCam	</settingsKey>
+        </state>
+        <state>
+          <distRange>	80 95	</distRange>
+          <sensitivity>	0.0025	</sensitivity>
+          <scrollSensitivity>	15	</scrollSensitivity>
+          <overScrollProtectOnMax>	0.2	</overScrollProtectOnMax>
+          <overScrollProtectOnMin>	0.2	</overScrollProtectOnMin>
+          <focusRadiusOnMinMaxDist>	-60 -45	</focusRadiusOnMinMaxDist>
+          <heightAboveBaseOnMinMaxDist>	80 180	</heightAboveBaseOnMinMaxDist>
+          <angleRangeOnMinDist>	32 85	</angleRangeOnMinDist>
+          <angleRangeOnMaxDist>	9 85	</angleRangeOnMaxDist>
+          <transitionDurationIn>	0.01	</transitionDurationIn>
+          <transitionEasingIn>	2	</transitionEasingIn>
+          <transitionDurationOut>	0.5	</transitionDurationOut>
           <transitionEasingOut>	3	</transitionEasingOut>
           <minLODBiasForTanks>	3.2	</minLODBiasForTanks>
           <settingsKey>	commanderCam	</settingsKey>
@@ -387,45 +404,62 @@
       <scrollSensitivity>	5	</scrollSensitivity>
       <scrollSmoothingTime>	0.3	</scrollSmoothingTime>
       <angleRange>	10 110	</angleRange>
-      <distRange>	5 45	</distRange>
-      <minStartDist>	20.0	</minStartDist>
+      <distRange>	2 25	</distRange>
+      <minStartDist>	0.0	</minStartDist>
       <optimalStartDist>	20	</optimalStartDist>
       <fovMultMinDist>	1.0	</fovMultMinDist>
       <fovMultMaxDist>	1.0	</fovMultMaxDist>
       <focusRadius>	3	</focusRadius>
       <heightAboveBase>	4	</heightAboveBase>
-      <overScrollProtectOnMax>	0	</overScrollProtectOnMax>
+      <overScrollProtectOnMax>	0.2	</overScrollProtectOnMax>
       <additionalZoomStates>
         <state>
-          <distRange>	45 55	</distRange>
+          <distRange>	30 45	</distRange>
           <sensitivity>	0.0025	</sensitivity>
-          <scrollSensitivity>	10	</scrollSensitivity>
-          <focusRadiusOnMinMaxDist>	-15 -30	</focusRadiusOnMinMaxDist>
-          <heightAboveBaseOnMinMaxDist>	20 40	</heightAboveBaseOnMinMaxDist>
-          <angleRangeOnMinDist>	43.15 105	</angleRangeOnMinDist>
-          <angleRangeOnMaxDist>	40.15 105	</angleRangeOnMaxDist>
-          <overScrollProtectOnMax>	0.1	</overScrollProtectOnMax>
-          <overScrollProtectOnMin>	0.1	</overScrollProtectOnMin>
-          <transitionDurationIn>	1	</transitionDurationIn>
-          <transitionEasingIn>	3	</transitionEasingIn>
-          <transitionDurationOut>	1	</transitionDurationOut>
+          <scrollSensitivity>	5	</scrollSensitivity>
+          <focusRadiusOnMinMaxDist>	3 3	</focusRadiusOnMinMaxDist>
+          <heightAboveBaseOnMinMaxDist>	4 4	</heightAboveBaseOnMinMaxDist>
+          <angleRangeOnMinDist>	10 110	</angleRangeOnMinDist>
+          <angleRangeOnMaxDist>	10 110	</angleRangeOnMaxDist>
+          <overScrollProtectOnMax>	0.2	</overScrollProtectOnMax>
+          <overScrollProtectOnMin>	0.0	</overScrollProtectOnMin>
+          <transitionDurationIn>	0.3	</transitionDurationIn>
+          <transitionEasingIn>	2	</transitionEasingIn>
+          <transitionDurationOut>	0.25	</transitionDurationOut>
           <transitionEasingOut>	3	</transitionEasingOut>
           <minLODBiasForTanks>	1.6	</minLODBiasForTanks>
           <settingsKey>	preCommanderCam	</settingsKey>
         </state>
         <state>
-          <distRange>	60 93	</distRange>
+          <distRange>	20 40	</distRange>
           <sensitivity>	0.0025	</sensitivity>
-          <scrollSensitivity>	33	</scrollSensitivity>
-          <overScrollProtectOnMax>	0	</overScrollProtectOnMax>
-          <overScrollProtectOnMin>	0.1	</overScrollProtectOnMin>
-          <focusRadiusOnMinMaxDist>	-60 -27	</focusRadiusOnMinMaxDist>
+          <scrollSensitivity>	20	</scrollSensitivity>
+          <focusRadiusOnMinMaxDist>	-15 -30	</focusRadiusOnMinMaxDist>
+          <heightAboveBaseOnMinMaxDist>	20 40	</heightAboveBaseOnMinMaxDist>
+          <angleRangeOnMinDist>	40 85	</angleRangeOnMinDist>
+          <angleRangeOnMaxDist>	35 85	</angleRangeOnMaxDist>
+          <overScrollProtectOnMax>	0.2	</overScrollProtectOnMax>
+          <overScrollProtectOnMin>	0.2	</overScrollProtectOnMin>
+          <transitionDurationIn>	0.5	</transitionDurationIn>
+          <transitionEasingIn>	3	</transitionEasingIn>
+          <transitionDurationOut>	0.5	</transitionDurationOut>
+          <transitionEasingOut>	2	</transitionEasingOut>
+          <minLODBiasForTanks>	1.6	</minLODBiasForTanks>
+          <settingsKey>	commanderCam	</settingsKey>
+        </state>
+        <state>
+          <distRange>	80 95	</distRange>
+          <sensitivity>	0.0025	</sensitivity>
+          <scrollSensitivity>	15	</scrollSensitivity>
+          <overScrollProtectOnMax>	0.2	</overScrollProtectOnMax>
+          <overScrollProtectOnMin>	0.2	</overScrollProtectOnMin>
+          <focusRadiusOnMinMaxDist>	-60 -45	</focusRadiusOnMinMaxDist>
           <heightAboveBaseOnMinMaxDist>	80 180	</heightAboveBaseOnMinMaxDist>
-          <angleRangeOnMinDist>	38.55 90	</angleRangeOnMinDist>
-          <angleRangeOnMaxDist>	9.65 85	</angleRangeOnMaxDist>
+          <angleRangeOnMinDist>	32 85	</angleRangeOnMinDist>
+          <angleRangeOnMaxDist>	9 85	</angleRangeOnMaxDist>
           <transitionDurationIn>	0.01	</transitionDurationIn>
           <transitionEasingIn>	2	</transitionEasingIn>
-          <transitionDurationOut>	1	</transitionDurationOut>
+          <transitionDurationOut>	0.5	</transitionDurationOut>
           <transitionEasingOut>	3	</transitionEasingOut>
           <minLODBiasForTanks>	3.2	</minLODBiasForTanks>
           <settingsKey>	commanderCam	</settingsKey>
@@ -527,17 +561,17 @@
       </advancedCollider>
       <keySensitivity>	0.025	</keySensitivity>
       <sensitivity>	0.0025	</sensitivity>
-      <scrollSensitivity>	10	</scrollSensitivity>
+      <scrollSensitivity>	5	</scrollSensitivity>
       <scrollSmoothingTime>	0.3	</scrollSmoothingTime>
       <angleRange>	10 110	</angleRange>
-      <distRange>	20 80	</distRange>
+      <distRange>	20 45	</distRange>
       <minStartDist>	20.0	</minStartDist>
-      <optimalStartDist>	50	</optimalStartDist>
+      <optimalStartDist>	45	</optimalStartDist>
       <fovMultMinDist>	1.0	</fovMultMinDist>
       <fovMultMaxDist>	1.0	</fovMultMaxDist>
       <focusRadius>	1	</focusRadius>
       <heightAboveBase>	26	</heightAboveBase>
-      <overScrollProtectOnMax>	0	</overScrollProtectOnMax>
+      <overScrollProtectOnMax>	0.2	</overScrollProtectOnMax>
       <dynamics>
         <impulseOscillator>
           <mass>	1.0	</mass>
@@ -716,7 +750,7 @@
       <keySensitivity>	0.01	</keySensitivity>
       <sensitivity>	0.005	</sensitivity>
       <scrollSensitivity>	0.0025	</scrollSensitivity>
-      <zooms>	1 2 4 8 16 32 100 4	</zooms>
+      <zooms>	1 2 4 8 16 25 50 4	</zooms>
       <aimingSystem>
         <T>	0.5 0.5 0.4	</T>
         <deviation>	-0.0 0.0	</deviation>
@@ -771,7 +805,7 @@
         <impulsePartToRoll>	0.5	</impulsePartToRoll>
         <pivotShift>	0.0	</pivotShift>
         <aimMarkerDistance>	1.0	</aimMarkerDistance>
-        <zoomExposure>	0.7 0.6 0.5 0.4 0.3 0.2 0.1	</zoomExposure>
+        <zoomExposure> 0.7 0.6 0.5 0.4 0.3 0.2 0.1 </zoomExposure>
       </dynamics>
     </camera>
   </sniperMode>
