@@ -2,6 +2,7 @@
 
 ### 1.7.1
 
+- 2.1.1.2
 - 2.1.1.0
 - Changed: distance and height, tactical view entry repeats vanilla
 
